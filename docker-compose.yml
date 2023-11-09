@@ -1,0 +1,13 @@
+version: '2'
+services:
+    db:
+     image: mysql:8.0
+     container_name: rails-sql
+     restart: unless-stopped
+     ports:
+       - 3307:3306
+     environment:
+         MYSQL_DATABASE: rails-sql
+         MYSQL_ROOT_PASSWORD: "password"
+     volumes:
+       - ./mysql:/var/lib/mysql
