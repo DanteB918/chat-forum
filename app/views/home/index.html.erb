@@ -1,9 +1,35 @@
   <div class="container">
     <div class="row text-center">
       <h1>Chat Forum</h1>
+        <p>
+            Welcome to the heart of our online community! 🌐 Dive into vibrant conversations, connect with like-minded individuals, and explore a world of endless possibilities right here on our Chat Forum App. Whether you're seeking advice, sharing experiences, or simply looking to chat, this is the place where discussions come alive.
+            <br /><br />
 
+            🗨️ Join diverse forums tailored to your interests, from tech and hobbies to lifestyle and beyond. Engage in real-time conversations or kick back and browse through the latest threads. Our user-friendly interface ensures seamless navigation, making it easy for you to find your tribe and make meaningful connections.
+            <br /><br />
+
+            Why choose our Chat Forum App?
+            <br /><br />
+
+            🌟 Dynamic Discussions: Experience the buzz of active forums with topics that span the spectrum of human interest.
+            <br /><br />
+
+            🤝 Community Connection: Forge friendships and build connections with people who share your passions and perspectives.
+            <br /><br />
+
+            📱 Anytime, Anywhere: Stay connected on the go with our mobile-friendly design. Your community is just a tap away, no matter where life takes you.
+            <br /><br />
+
+            🔒 Safe and Secure: Enjoy a worry-free environment with robust moderation tools, ensuring a respectful and inclusive space for all.
+            <br /><br />
+            Ready to embark on a journey of discovery and connection? Sign up now and become part of a thriving community that values your voice. Let the conversations begin! 🚀
+        </p>
       <% if user_signed_in? %> 
-        <div> Welcome <%= current_user.email %> </div> 
+        <div> Welcome <%= current_user.email %> </div>
+      <% else %>
+        <div class="d-flex justify-content-center">
+          <%= link_to "Get started today!", new_user_session_path, class: "btn btn-primary" %> 
+        </div>
       <% end %>
     </div>
   </div>
