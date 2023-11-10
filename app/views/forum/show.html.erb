@@ -2,14 +2,14 @@
   <div class="container">
       <a href="/forum" class="btn btn-primary mt-3">Back to forum</a>
       <% if (current_user.id === @forum.user_id) %>
-        <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger mt-3", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
       <% end %>
       <div class="d-flex justify-content-center mt-3">
           <div class="card w-75">
               <div class="card-header">
                   Forum created by <%= @forum.user.email %>:
                     <% if (current_user.id === @forum.user_id) %>
-                      <%= link_to "Edit", edit_forum_path(@forum.id), :class => "btn btn-primary float-end" %>
+                      <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger float-md-end m-2", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
+                      <%= link_to "Edit", edit_forum_path(@forum.id), :class => "btn btn-primary float-md-end m-2" %>
                     <% end %>
               </div>
               <div class="card-body">
