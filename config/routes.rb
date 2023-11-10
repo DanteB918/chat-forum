@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :forum
+    resources :comment
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
