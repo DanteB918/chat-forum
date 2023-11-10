@@ -1,0 +1,21 @@
+<%= turbo_frame_tag "app" do %>
+<div class="container">
+    <a href="/forum" class="btn btn-primary mt-3">Back to forum</a>
+    <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger mt-3", :method => :delete} %>
+
+    <div class="d-flex justify-content-center mt-3">
+        <div class="card w-75">
+            <div class="card-header">
+                Forum created by <%= @forum.user.email %>:
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p><%= @forum.title %></p>
+                <footer class="blockquote-footer"><cite title="Source Title"><%= @forum.description %></cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% end %>
