@@ -7,11 +7,11 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "Home", root_path, data: { turbo_frame: "app" }, :class => "nav-link active" %>
+          <%= link_to "Home", root_path, :class => "nav-link active" %>
         </li>
         <% if user_signed_in? %> 
           <li class="nav-item">
-            <%= link_to "Forum", "/forum", data: { turbo_frame: "app" }, :class => "nav-link" %>
+            <%= link_to "Forum", "/forum", :class => "nav-link" %>
           </li>
         <% end %>
         <%# <li class="nav-item">
@@ -26,7 +26,7 @@
                 <% if user_signed_in? %> 
                   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
                 <% else %>
-                  <%= link_to "Sign in", new_user_session_path, data: { turbo_frame: "app" }, class: "dropdown-item" %> 
+                  <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %> 
                 <% end %>
 
             <%# <li><a class="dropdown-item" href="#">Action</a></li>
