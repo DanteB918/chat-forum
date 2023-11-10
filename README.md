@@ -1,24 +1,11 @@
-# README
+# Chat Forum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dependencies can be found within the Gemfile at the root directory.
 
-Things you may want to cover:
+Before running the command below, you will need to have rails, ruby, and MySql installed on your machine. For more info, here is the rails documentation
 
-* Ruby version
+```
+rails server
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+will start the development server
