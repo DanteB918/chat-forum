@@ -1,19 +1,12 @@
 class CommentController < ApplicationController
-  def show
-    @comment = Comment.find(params[:id])
-  end
-
-  def new
-    @comment = Comment.new
-  end
 
   def create
     @comment = Comment.new(forum_params)
 
     if @comment.save
-      redirect_to forum_path(@comment.id)
+      redirect_to forum_path(@comment.forum_id)
     else
-      render :new
+      redirect_to forum_path(@comment.forum_id)
     end
   end
 
@@ -26,6 +19,6 @@ class CommentController < ApplicationController
 
   private
     def forum_params
-      params.require(:comment).permit(:message, :user_id).merge(:user_id => current_user.id)
+      params.require(:comment).permit(:message, :user_id, :forum_id).merge(:user_id => current_user.id)
     end
 end

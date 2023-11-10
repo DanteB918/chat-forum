@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :forum
-    resources :comment
+    # resources :comment
+    post '/comment/new', to: 'comment#create', as: 'new_comment_path'
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

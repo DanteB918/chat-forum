@@ -1,0 +1,11 @@
+<%= form_with model: @comment, :html => {:class => "w-50 justify-content-center d-flex flex-column"},:method => 'post', :url => new_comment_path_url, :remote => true do |form| %>
+    <%= form.hidden_field :forum_id, value: @forum.id %>
+    <div class="mb-3">
+        <%# <%= form.label :message, class:"form-label" %>
+        <%# <br> %>
+        <%= form.text_area :message, class: "form-control mt-3", placeholder: 'Comment...' %>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+        <%= form.submit class:"btn btn-primary w-25", data: {disable_with: false} %>
+    </div>
+<% end %>

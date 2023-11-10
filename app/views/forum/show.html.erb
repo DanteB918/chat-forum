@@ -17,9 +17,23 @@
               </div>
           </div>
       </div>
-
-      <div class="w-100 text-center">
-        <textarea class="w-75" placeholder="Comment"></textarea>
+      <% if @forum.comment %>
+        <div class="w-100 d-flex justify-content-center">
+        <div class="card w-75">
+          <ul class="list-group list-group-flush">
+            <% @forum.comment.each do |comment| %>
+              <li class="list-group-item">
+                <em><%= comment.user.email %></em><br />
+                <%= comment.message %><br />
+                <em><%= comment.created_at.strftime("%-d/%-m/%y at %l:%M %p") %></em>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        </div>
+      <% end %>
+      <div class="d-flex justify-content-center">
+        <%= render partial: 'comments/create-comment', :locals => {:comment => @comment, :forum => @forum } %>
       </div>
   </div>
 <% end %>

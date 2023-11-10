@@ -5,6 +5,7 @@ class ForumController < ApplicationController
 
   def show
     @forum = Forum.find(params[:id])
+    @comment = Comment.new
   end
 
   def new
