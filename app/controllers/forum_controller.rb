@@ -24,12 +24,6 @@ class ForumController < ApplicationController
     end
   end
 
-  def clear
-    Forum.destroy_all
-
-    redirect_to root_path
-  end
-
   def destroy
     @forum = Forum.find(params[:id])
     @forum.delete

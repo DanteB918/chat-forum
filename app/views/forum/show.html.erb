@@ -1,8 +1,9 @@
 <%= turbo_frame_tag "app" do %>
   <div class="container">
       <a href="/forum" class="btn btn-primary mt-3">Back to forum</a>
-      <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger mt-3", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
-
+      <% if (current_user.id === @forum.user_id) %>
+        <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger mt-3", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
+      <% end %>
       <div class="d-flex justify-content-center mt-3">
           <div class="card w-75">
               <div class="card-header">
