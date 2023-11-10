@@ -1,8 +1,12 @@
-<h1>Hello Ruby!</h1>
+<div class="container">
+  <div class="row text-center">
+    <h1>Hello and welcome!</h1>
 
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
+    <% if user_signed_in? %> 
+    <div> Welcome <%= current_user.email %> </div> 
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path %> 
+    <% end %>
+  </div>
+</div>
