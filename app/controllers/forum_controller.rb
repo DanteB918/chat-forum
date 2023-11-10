@@ -12,6 +12,22 @@ class ForumController < ApplicationController
     @forum = Forum.new
   end
 
+  def edit
+    @forum = Forum.find(params[:id])
+  end
+
+  def update
+    @forum = Forum.find(params[:id])
+
+    @forum.update(forum_params)
+
+    if @forum.save
+        redirect_to forum_path(@forum.id)
+      else
+        render :edit
+      end
+  end
+
   def create
     # forum_params.store(:user_id, current_user.id)
 

@@ -8,6 +8,9 @@
           <div class="card w-75">
               <div class="card-header">
                   Forum created by <%= @forum.user.email %>:
+                    <% if (current_user.id === @forum.user_id) %>
+                      <%= link_to "Edit", edit_forum_path(@forum.id), :class => "btn btn-primary float-end" %>
+                    <% end %>
               </div>
               <div class="card-body">
                   <blockquote class="blockquote mb-0">

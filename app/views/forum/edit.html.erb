@@ -1,0 +1,18 @@
+<%= turbo_frame_tag "app" do %>
+<div class="container">
+    <%= link_to "Back to forum", forum_path(@forum.id), :class => "btn btn-primary mt-3" %>
+
+    <div class="justify-content-center d-flex">
+    <% if @forum && @forum.errors.any? %>
+        <ul>
+            <% @forum.errors.full_messages.each do |message|%>
+                <li><%= message %> </li>
+            <%end%>
+        </ul>
+    <%end%>
+
+    <%= render partial: "forum/form" %>
+
+    </div>
+</div>
+<% end %>
