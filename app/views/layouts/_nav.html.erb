@@ -9,10 +9,11 @@
         <li class="nav-item">
           <%= link_to "Home", root_path, data: { turbo_frame: "app" }, :class => "nav-link active" %>
         </li>
-
-        <li class="nav-item">
-          <%= link_to "Forum", "/forum", data: { turbo_frame: "app" }, :class => "nav-link" %>
-        </li>
+        <% if user_signed_in? %> 
+          <li class="nav-item">
+            <%= link_to "Forum", "/forum", data: { turbo_frame: "app" }, :class => "nav-link" %>
+          </li>
+        <% end %>
         <%# <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>  %>

@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root "home#index"
 
   devise_for :users
-
-  resources :forum
+  authenticated :user do
+    resources :forum
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
