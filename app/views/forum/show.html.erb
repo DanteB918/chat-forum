@@ -8,8 +8,8 @@
               <div class="card-header">
                   Forum created by <%= @forum.user.email %>:
                     <% if (current_user.id === @forum.user_id) %>
-                      <%=button_to 'Delete', {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger float-md-end m-2", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
-                      <%= link_to "Edit", edit_forum_path(@forum.id), :class => "btn btn-primary float-md-end m-2" %>
+                      <%=button_to "Delete #{icon('fa-solid', 'trash')}".html_safe, {:controller => :forum, :action => 'destroy', :id => @forum.id}, {class: "btn btn-danger float-md-end m-2", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, :method => :delete} %>
+                      <%= link_to "Edit #{icon('fa-solid', 'pen-to-square')}".html_safe, edit_forum_path(@forum.id), :class => "btn btn-primary float-md-end m-2" %>
                     <% end %>
               </div>
               <div class="card-body">
