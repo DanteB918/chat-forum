@@ -37,6 +37,7 @@ class ForumController < ApplicationController
     if @forum.save
       redirect_to forum_path(@forum.id)
     else
+      flash[:forum_alert] = 'Error creating record'
       render :new
     end
   end

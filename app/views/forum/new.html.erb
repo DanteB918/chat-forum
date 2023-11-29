@@ -2,17 +2,20 @@
 <div class="container">
     <a href="/forum" class="btn btn-primary mt-3">Back to forums</a>
 
-    <div class="justify-content-center d-flex">
-    <% if @forum && @forum.errors.any? %>
-        <ul>
+    <% if flash[:forum_alert] %>
+      <div class="notice alert alert-danger w-75" style="margin: 2% auto;" role="alert"><%= flash[:forum_alert] %>
+        <% if @forum && @forum.errors.any? %>
+            <hr>
+            <ul>
             <% @forum.errors.full_messages.each do |message|%>
                 <li><%= message %> </li>
             <%end%>
-        </ul>
-    <%end%>
+            </ul>
+        <%end%>
+      </div>
+    <% end %>
 
-    <%= render partial: "forum/form" %>
+    <%= render partial: "forum/form", :locals => { path: '/forum' }%>
 
-    </div>
 </div>
 <% end %>

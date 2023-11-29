@@ -11,7 +11,7 @@
         </ul>
     <%end%>
 
-    <%= render partial: "forum/form" %>
+    <%= render partial: "forum/form", :locals => { path: forum_path(@forum.id) } %>
 
     </div>
 </div>
